@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">WeatherWizard</string>
+    <string name="time">WeatherWizard</string>
+    <string name="city">WeatherWizard</string>
+    <string name="weather_f">WeatherWizard</string>
+    <string name="weather_state">WeatherWizard</string>
+    <string name="humidity">WeatherWizard</string>
+    <string name="wind_speed">WeatherWizard</string>
+    <string name="last_updated">WeatherWizard</string>
+    <string name="day">WeatherWizard</string>
+    <string name="high_low">WeatherWizard</string>
+    <string name="search_hint">WeatherWizard</string>
+    <string name="search_item">WeatherWizard</string>
+</resources>
