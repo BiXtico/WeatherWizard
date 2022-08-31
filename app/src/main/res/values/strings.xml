@@ -1,14 +1,16 @@
 <resources>
     <string name="app_name">WeatherWizard</string>
-    <string name="time">WeatherWizard</string>
-    <string name="city">WeatherWizard</string>
-    <string name="weather_f">WeatherWizard</string>
-    <string name="weather_state">WeatherWizard</string>
-    <string name="humidity">WeatherWizard</string>
-    <string name="wind_speed">WeatherWizard</string>
-    <string name="last_updated">WeatherWizard</string>
-    <string name="day">WeatherWizard</string>
-    <string name="high_low">WeatherWizard</string>
-    <string name="search_hint">WeatherWizard</string>
-    <string name="search_item">WeatherWizard</string>
+    <string name="time">08:00 AM</string>
+    <string name="city">London</string>
+    <string name="weather_f">18°F </string>
+    <string name="weather_state">sunny</string>
+    <string name="humidity">60%</string>
+    <string name="wind_speed">3 mph</string>
+    <string name="last_updated">last updated: Sun, Jul 14, 11:34 AM</string>
+    <string name="day">Today</string>
+    <string name="day_after">Friday</string>
+    <string name="day_after_after">Saturday</string>
+    <string name="high_low">62.6° / 71.6°F</string>
+    <string name="search_hint">Search</string>
+    <string name="search_item">London - United Kingdom</string>
 </resources>
