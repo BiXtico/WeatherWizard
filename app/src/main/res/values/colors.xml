@@ -9,5 +9,6 @@
     <color name="primaryTextColor">#ffffff</color>
     <color name="secondaryTextColor">#ffffff</color>
     <color name="lightGrey">#E5E5E5</color>
+    <color name="Light_primary">#33415E</color>
 
 </resources>

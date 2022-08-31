@@ -12,5 +12,36 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/poppins_regular</item>
+        <item name="font">@font/poppins_regular</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
+        <item name="android:textSize">@dimen/medium_text_16</item>
     </style>
+
+    <style name="Light_Text" parent="Theme.WeatherWizard">
+        <item name="fontFamily">@font/poppins_light</item>
+        <item name="font">@font/poppins_light</item>
+    </style>
+
+    <style name="Extra_Light_Text" parent="Theme.WeatherWizard">
+        <item name="fontFamily">@font/poppins_light</item>
+        <item name="font">@font/poppins_light</item>
+    </style>
+
+    <style name="Bold_white_text" parent="Theme.WeatherWizard">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="font">@font/poppins_bold</item>
+    </style>
+
+    <style name="Bold_Search_text" parent="Theme.WeatherWizard">
+        <item name="fontFamily">@font/poppins_bold</item>
+        <item name="font">@font/poppins_bold</item>
+    </style>
+
+    <style name="Divider">
+        <item name="android:layout_width">1dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:background">@color/secondaryColor</item>
+    </style>
+
 </resources>
