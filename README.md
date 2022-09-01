@@ -8,6 +8,7 @@ This project is a basic weather application.
 
 ## Design
 
-![Screenshot 2022-08-30 214720](https://user-images.githubusercontent.com/56024802/187529618-31af9457-5d86-4503-97cc-3498d6fb72bf.png)
+![Screenshot 2022-09-01 161315](https://user-images.githubusercontent.com/56024802/187936322-d90447ba-4071-44d6-868e-f87f0850125d.png)
+
 
 ## Technologies Used
