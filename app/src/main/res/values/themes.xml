@@ -38,10 +38,26 @@
         <item name="font">@font/poppins_bold</item>
     </style>
 
+    <style name="medium_text" parent="Theme.WeatherWizard">
+        <item name="fontFamily">@font/poppins_medium</item>
+        <item name="font">@font/poppins_medium</item>
+    </style>
+
     <style name="Divider">
         <item name="android:layout_width">1dp</item>
         <item name="android:layout_height">60dp</item>
         <item name="android:background">@color/secondaryColor</item>
+    </style>
+
+    <style name="CutButtonApperance" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="shapeAppearanceOverlay">@style/MyShapeAppearance</item>
+    </style>
+    <style name="MyShapeAppearance">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeBottomRight">24dp</item>
+        <item name="cornerSizeBottomLeft">24dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:minWidth">0dp</item>
     </style>
 
 </resources>

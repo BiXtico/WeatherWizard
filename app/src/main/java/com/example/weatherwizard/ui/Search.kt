@@ -8,17 +8,17 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.weatherwizard.R
 
-class Home : Fragment() {
+class Search : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: SearchViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        viewModel = ViewModelProvider(this).get(SearchViewModel::class.java)
+        return inflater.inflate(R.layout.search_fragment, container, false)
     }
+
 
 }

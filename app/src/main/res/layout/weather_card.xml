@@ -47,7 +47,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/high_low"
         app:layout_constraintTop_toBottomOf="@+id/high_low"
-        tools:src="@drawable/wind_icon" />
+        tools:src="@drawable/water_drop" />
 
     <TextView
         android:id="@+id/high_low"

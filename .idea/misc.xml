@@ -7,8 +7,10 @@
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/card.xml" value="0.402" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/cloud.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/ic_launcher_background.xml" value="0.245" />
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/recycler_card.xml" value="0.407" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/reload_icon.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/round_button.xml" value="0.402" />
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/search_card.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/search_icon.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/water_drop.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/wind_icon.xml" value="0.245" />
@@ -16,6 +18,8 @@
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/activity_main.xml" value="0.43125" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/card.xml" value="0.43125" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/home_fragment.xml" value="0.33" />
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/search_card.xml" value="0.354424967935015" />
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/search_fragment.xml" value="0.33" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/weather_card.xml" value="0.75" />
       </map>
     </option>
