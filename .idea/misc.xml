@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.126" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/arrow_down.xml" value="0.245" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/card.xml" value="0.402" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/drawable/cloud.xml" value="0.245" />
@@ -20,7 +21,7 @@
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/home_fragment.xml" value="0.33" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/search_card.xml" value="0.354424967935015" />
         <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/search_fragment.xml" value="0.33" />
-        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/weather_card.xml" value="0.75" />
+        <entry key="..\:/Users/mahmo/AndroidStudioProjects/WeatherWizard/app/src/main/res/layout/weather_card.xml" value="0.22" />
       </map>
     </option>
   </component>

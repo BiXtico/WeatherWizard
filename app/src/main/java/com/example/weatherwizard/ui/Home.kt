@@ -6,19 +6,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import com.example.weatherwizard.R
+import com.example.weatherwizard.databinding.HomeFragmentBinding
 
 class Home : Fragment() {
-
     private lateinit var viewModel: HomeViewModel
+    private lateinit var binding: HomeFragmentBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        binding = DataBindingUtil.inflate(inflater,R.layout.home_fragment,container,false)
 
-        return inflater.inflate(R.layout.home_fragment, container, false)
+        binding.searchIcon.setOnClickListener{
+            it.findNavController().navigate(R.id.action_home2_to_search)
+        }
+
+        return binding.root
     }
 
 }
