@@ -12,7 +12,9 @@
         tools:layout="@layout/home_fragment">
         <action
             android:id="@+id/action_home2_to_search"
-            app:destination="@id/search" />
+            app:destination="@id/search"
+            app:enterAnim="@anim/slide_in_bottom"
+            app:exitAnim="@anim/slide_out_bottom" />
         <argument
             android:name="Searchable"
             app:argType="string"
@@ -25,7 +27,9 @@
         tools:layout="@layout/search_fragment">
         <action
             android:id="@+id/action_search_to_home2"
-            app:destination="@id/home2" />
+            app:destination="@id/home2"
+            app:enterAnim="@anim/slide_out_bottom"
+            app:exitAnim="@anim/slide_in_bottom" />
 
     </fragment>
 </navigation>

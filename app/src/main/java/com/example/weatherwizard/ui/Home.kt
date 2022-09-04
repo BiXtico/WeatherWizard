@@ -27,7 +27,7 @@ class Home : Fragment() {
             it.findNavController().navigate(HomeDirections.actionHome2ToSearch())
         }
 
-        var args = arguments?.let { HomeArgs.fromBundle(it) }
+//        var args = arguments?.let { HomeArgs.fromBundle(it) }
 
         //use the argument in the view model to get result from API
 
