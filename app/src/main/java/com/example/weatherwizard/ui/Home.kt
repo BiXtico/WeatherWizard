@@ -24,8 +24,14 @@ class Home : Fragment() {
         binding = DataBindingUtil.inflate(inflater,R.layout.home_fragment,container,false)
 
         binding.searchIcon.setOnClickListener{
-            it.findNavController().navigate(R.id.action_home2_to_search)
+            it.findNavController().navigate(HomeDirections.actionHome2ToSearch())
         }
+
+        var args = arguments?.let { HomeArgs.fromBundle(it) }
+
+        //use the argument in the view model to get result from API
+
+
 
         return binding.root
     }

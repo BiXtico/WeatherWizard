@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_home2_to_search"
             app:destination="@id/search" />
+        <argument
+            android:name="Searchable"
+            app:argType="string"
+            app:nullable="true" />
     </fragment>
     <fragment
         android:id="@+id/search"
@@ -22,5 +26,6 @@
         <action
             android:id="@+id/action_search_to_home2"
             app:destination="@id/home2" />
+
     </fragment>
 </navigation>
