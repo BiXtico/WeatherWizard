@@ -31,7 +31,6 @@ class Search : Fragment() {
             it.findNavController().navigate(SearchDirections.actionSearchToHome2(getSearchable()))
         }
 
-
         return binding.root
     }
 
