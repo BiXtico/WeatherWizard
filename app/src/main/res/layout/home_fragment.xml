@@ -107,7 +107,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/medium_24"
-                tools:src="@drawable/water_drop" />
+                android:src="@drawable/water_drop" />
 
             <TextView
                 android:id="@+id/current_humidity"
@@ -127,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/medium_24"
-                tools:src="@drawable/wind_icon" />
+                android:src="@drawable/wind_icon" />
 
             <TextView
                 android:id="@+id/current_windSpeed"
@@ -154,7 +154,7 @@
                 android:layout_margin="@dimen/medium_24"
                 android:padding="@dimen/small_12"
                 android:background="@drawable/round_button"
-                tools:src="@drawable/reload_icon" />
+                android:src="@drawable/reload_icon" />
         </LinearLayout>
 
         <TextView

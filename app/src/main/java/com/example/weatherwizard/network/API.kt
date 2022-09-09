@@ -10,8 +10,12 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 
-private var URL = "https://api.weatherapi.com/v1/"
-private var key = "e90e7437ca04421a80b141901220309"
+private const val URL = "https://api.weatherapi.com/v1/"
+private const val key = "daebe4c2d4c04215973155623220909"
+private const val days = 3
+private const val aqiResponse = "no"
+private const val alertStatus = "no"
+
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()
@@ -22,8 +26,11 @@ private var retrofit = Retrofit.Builder()
     .build()
 
 interface WeatherService {
-    @GET("forecast.json?key=e90e7437ca04421a80b141901220309&days=3&aqi=no&alerts=no")
-    fun getWeatherInfo(@Query("q") city:String): Call<CityData>
+    @GET("forecast.json?key=$key&days=$days&aqi=$aqiResponse&alerts=$alertStatus")
+    fun getWeatherInfo(@Query("q") city: String): Call<CityData>
+
+    @GET("search.json?key=$key")
+    fun getSearchable(@Query("q") searchable: String): Call<List<City>>
 }
 
 object WeatherAPI {

@@ -53,7 +53,7 @@
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="@+id/high_low"
             app:layout_constraintTop_toBottomOf="@+id/high_low"
-            tools:src="@drawable/water_drop" />
+            android:src="@drawable/water_drop" />
 
         <TextView
             android:id="@+id/high_low"
@@ -64,7 +64,7 @@
             app:layout_constraintBottom_toTopOf="@+id/imageView2"
             app:layout_constraintStart_toEndOf="@+id/view"
             app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/high_low_weather" />
+            android:text="@string/high_low_weather" />
 
         <TextView
             android:id="@+id/weather_high_low"
