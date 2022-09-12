@@ -4,48 +4,51 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.weatherwizard.network.City
-import com.example.weatherwizard.network.CityData
-import com.example.weatherwizard.network.WeatherAPI
+import com.example.weatherwizard.network.*
+import kotlinx.coroutines.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.await
 
 class HomeViewModel : ViewModel() {
 
     val _homeData = MutableLiveData<CityData>()
-    val homeData :LiveData<CityData>
-    get()= _homeData
+    val homeData: LiveData<CityData>
+        get() = _homeData
 
-    val _nextDaysData = MutableLiveData<List<City>>()
-    val nextDaysData :LiveData<List<City>>
-    get() = _nextDaysData
+
+    private val fetchWeatherDataJob = Job()
+    private val fetchWeatherDataScope = CoroutineScope(fetchWeatherDataJob + Dispatchers.IO)
+
 
     var searchableText = "London"
 
     init {
-        getCurrentWeather(searchableText)
-        getSearchable()
+        fetchCurrentData(searchableText)
     }
 
-    private fun getCurrentWeather(searchable:String){
-        WeatherAPI.retrofitService.getWeatherInfo(searchable).enqueue(object: Callback<CityData> {
-            override fun onFailure(call: Call<CityData>, t: Throwable) {
-                Log.i("checkAPI","failed")
-            }
-            override fun onResponse(call: Call<CityData>, response: Response<CityData>) {
-                Log.i("checkAPI","${response.body()?.current?.humidity}")
-            }
-        })
+    fun renewWeatherData(searchable: String){
+        fetchWeatherDataJob.cancel()
+        fetchCurrentData(searchable)
     }
-    private fun getSearchable(){
-        WeatherAPI.retrofitService.getSearchable("London").enqueue(object: Callback<List<City>> {
-            override fun onFailure(call: Call<List<City>>, t: Throwable) {
-                Log.i("checkAPI","failed")
+    private fun fetchCurrentData(searchable: String) {
+        fetchWeatherDataScope.launch {
+            try {
+                var data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
+                _homeData.value = data.body()
+                Log.i("checkAPI", "${data?.body()?.current?.humidity}")
+            } catch (t: Throwable) {
+                Log.i("checkAPI", "failed")
             }
-            override fun onResponse(call: Call<List<City>>, response: Response<List<City>>) {
-                Log.i("checkAPI","${response.body()?.size}")
-            }
-        })
+        }
     }
+
+
+    override fun onCleared() {
+        super.onCleared()
+        fetchWeatherDataJob.cancel()
+    }
+
+
 }

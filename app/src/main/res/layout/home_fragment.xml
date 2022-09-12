@@ -164,7 +164,7 @@
             android:textSize="@dimen/small_text_12"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/current_box"
-            tools:text="@string/last_updated" />
+            android:text="@string/last_updated" />
 
         <include
             android:id="@+id/card1"

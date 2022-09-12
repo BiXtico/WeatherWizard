@@ -2,7 +2,9 @@ package com.example.weatherwizard.network
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import kotlinx.coroutines.Deferred
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
@@ -27,10 +29,10 @@ private var retrofit = Retrofit.Builder()
 
 interface WeatherService {
     @GET("forecast.json?key=$key&days=$days&aqi=$aqiResponse&alerts=$alertStatus")
-    fun getWeatherInfo(@Query("q") city: String): Call<CityData>
+    suspend fun getWeatherInfo(@Query("q") city: String): Response<CityData>
 
     @GET("search.json?key=$key")
-    fun getSearchable(@Query("q") searchable: String): Call<List<City>>
+    suspend fun getSearchable(@Query("q") searchable: String): Response<List<City>>
 }
 
 object WeatherAPI {
