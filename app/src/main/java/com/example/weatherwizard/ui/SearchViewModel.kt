@@ -18,21 +18,31 @@ class SearchViewModel : ViewModel() {
         get() = _nextDaysData
 
     private val fetchCitiesJob = Job()
-    private val fetchCitiesScope = CoroutineScope(fetchCitiesJob + Dispatchers.IO)
+    private val fetchCitiesScope = CoroutineScope(fetchCitiesJob + Dispatchers.Main)
 
-    fun renewSearch(searchable: String){
+    /**
+     * cancels the previous search and starts a new one with new passed searchable text
+     */
+    fun renewSearch(searchable: String) {
         fetchCitiesJob.cancel()
         fetchSearchables(searchable)
     }
+    init {
+        fetchSearchables("London")
+    }
 
-    private fun fetchSearchables(searchable:String){
-        fetchCitiesScope.launch{
+    /**
+     * starts a network call that get list of city resulting from
+     * API and inserts them into current livedata object list holder
+     */
+    private fun fetchSearchables(searchable: String) {
+        fetchCitiesScope.launch {
             try {
                 var data = WeatherAPI.retrofitService.getSearchable(searchable)
                 _nextDaysData.value = data.body()
-                Log.i("checkAPI","${data?.body()?.size}")
-            }catch (t: Throwable){
-                Log.i("checkAPI","failed")
+                Log.i("checkAPI", "${data?.body()?.size}")
+            } catch (t: Throwable) {
+                Log.i("checkAPI", "failed")
             }
         }
     }

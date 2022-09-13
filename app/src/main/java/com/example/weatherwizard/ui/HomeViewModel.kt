@@ -13,13 +13,18 @@ import retrofit2.await
 
 class HomeViewModel : ViewModel() {
 
-    val _homeData = MutableLiveData<CityData>()
-    val homeData: LiveData<CityData>
+    private val forecastCount =3
+    private val _homeData = MutableLiveData<WeatherData>()
+    val homeData: LiveData<WeatherData>
         get() = _homeData
+
+    private val _comingDays = MutableLiveData<List<NextDay>>()
+    val comingDays: LiveData<List<NextDay>>
+        get() = _comingDays
 
 
     private val fetchWeatherDataJob = Job()
-    private val fetchWeatherDataScope = CoroutineScope(fetchWeatherDataJob + Dispatchers.IO)
+    private val fetchWeatherDataScope = CoroutineScope(fetchWeatherDataJob + Dispatchers.Main)
 
 
     var searchableText = "London"
@@ -28,15 +33,17 @@ class HomeViewModel : ViewModel() {
         fetchCurrentData(searchableText)
     }
 
-    fun renewWeatherData(searchable: String){
+    fun renewWeatherData(searchable: String) {
         fetchWeatherDataJob.cancel()
         fetchCurrentData(searchable)
     }
+
     private fun fetchCurrentData(searchable: String) {
         fetchWeatherDataScope.launch {
             try {
                 var data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
-                _homeData.value = data.body()
+                _homeData.value = data.body()?.asWeatherDataDomainModel()
+                _comingDays.value = data.body()?.asDayDomainModel()
                 Log.i("checkAPI", "${data?.body()?.current?.humidity}")
             } catch (t: Throwable) {
                 Log.i("checkAPI", "failed")

@@ -34,13 +34,16 @@ fun CityData.asWeatherDataDomainModel() = WeatherData(
     humidityPercentage = current.humidity.toString(),
     condition = "It's " + current.condition.text
 )
-
-fun CityData.asDayDomainModel(dayNum: Int) = NextDay(
-    icon = forecast.forecastday[dayNum].day.condition.icon,
-    temperatureHighest = "/" +forecast.forecastday[dayNum].day.maxtempF.toString(),
-    temperatureLowest = forecast.forecastday[dayNum].day.mintempF.toString(),
-    dayName = forecast.forecastday[dayNum].date.asDayFormat()
-)
+fun CityData.asDayDomainModel() :List<NextDay>{
+    return forecast.forecastday.map {
+        NextDay(
+            temperatureHighest = it.day.maxtempF.toString(),
+            temperatureLowest = it.day.mintempF.toString(),
+            dayName = it.date.asDayFormat(),
+            icon = it.day.condition.icon
+        )
+    }
+}
 
 fun String.asDayFormat() : String{
     val inFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
