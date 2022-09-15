@@ -5,6 +5,9 @@
 
     <data>
 
+        <variable
+            name="viewModel"
+            type="com.example.weatherwizard.ui.HomeViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,6 +25,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            android:text="@{viewModel.homeData.time}"
             tools:text="@string/time" />
 
         <ImageButton
@@ -48,6 +52,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
+            android:text="@{viewModel.homeData.cityName}"
             tools:text="@string/city" />
 
 
@@ -60,6 +65,7 @@
             android:layout_marginTop="@dimen/large_32"
             android:textAlignment="center"
             android:textSize="60sp"
+            android:text="@{viewModel.homeData.temperature}"
             app:layout_constraintEnd_toStartOf="@+id/weather_icon"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -86,6 +92,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weather_degree"
+            android:text="@{viewModel.homeData.condition}"
             tools:text="@string/weather_state" />
 
         <LinearLayout
@@ -116,6 +123,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/medium_24"
                 android:textSize="@dimen/small_text_12"
+                android:text="@{viewModel.homeData.humidityPercentage}"
                 tools:text="@string/humidity" />
 
             <View
@@ -136,6 +144,7 @@
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/medium_24"
                 android:textSize="@dimen/small_text_12"
+                android:text="@{viewModel.homeData.windSpeed}"
                 tools:text="@string/wind_speed" />
 
             <View
@@ -148,12 +157,13 @@
                 android:layout_weight="1" />
 
             <ImageButton
+                android:id="@+id/reload_button"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/medium_24"
-                android:padding="@dimen/small_12"
                 android:background="@drawable/round_button"
+                android:padding="@dimen/small_12"
                 android:src="@drawable/reload_icon" />
         </LinearLayout>
 
@@ -161,10 +171,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/small_12"
+            android:text="@{viewModel.homeData.lastUpdated}"
             android:textSize="@dimen/small_text_12"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/current_box"
-            android:text="@string/last_updated" />
+            app:layout_constraintTop_toBottomOf="@+id/current_box" />
 
         <include
             android:id="@+id/card1"

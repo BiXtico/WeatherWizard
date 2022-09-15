@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -25,6 +26,13 @@ class Home : Fragment() {
 
         binding.searchIcon.setOnClickListener{
             it.findNavController().navigate(HomeDirections.actionHome2ToSearch())
+        }
+        binding.viewModel = viewModel
+        binding.lifecycleOwner = this
+
+        binding.reloadButton.setOnClickListener {
+            viewModel.renewWeatherData(viewModel.searchableText)
+            Toast.makeText(context,"hello", Toast.LENGTH_SHORT).show()
         }
 
 //        var args = arguments?.let { HomeArgs.fromBundle(it) }

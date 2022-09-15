@@ -13,7 +13,8 @@ data class WeatherData(
     val temperature: String,
     val windSpeed: String,
     val humidityPercentage: String,
-    val condition: String
+    val condition: String,
+    val lastUpdated: String
 )
 
 data class NextDay(
@@ -32,7 +33,8 @@ fun CityData.asWeatherDataDomainModel() = WeatherData(
     temperature = current.tempF.toString(),
     windSpeed = current.windMph.toString(),
     humidityPercentage = current.humidity.toString(),
-    condition = "It's " + current.condition.text
+    condition = "It's " + current.condition.text,
+    lastUpdated = location.localtime
 )
 fun CityData.asDayDomainModel() :List<NextDay>{
     return forecast.forecastday.map {

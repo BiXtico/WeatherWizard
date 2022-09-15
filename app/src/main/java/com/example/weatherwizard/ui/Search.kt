@@ -13,6 +13,8 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.weatherwizard.R
 import com.example.weatherwizard.databinding.SearchFragmentBinding
+import com.example.weatherwizard.util.CityListener
+import com.example.weatherwizard.util.RecycleViewAdapter
 
 class Search : Fragment() {
 
@@ -30,6 +32,12 @@ class Search : Fragment() {
         binding.downButton.setOnClickListener {
             it.findNavController().navigate(SearchDirections.actionSearchToHome2(getSearchable()))
         }
+        binding.lifecycleOwner = this
+        val adapter = RecycleViewAdapter(CityListener { cityName ->
+            viewModel.renewSearch(cityName)
+        })
+
+        binding.searchList.adapter = adapter
 
         return binding.root
     }

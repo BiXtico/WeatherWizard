@@ -1,6 +1,7 @@
 package com.example.weatherwizard.ui
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +14,6 @@ import retrofit2.await
 
 class HomeViewModel : ViewModel() {
 
-    private val forecastCount =3
     private val _homeData = MutableLiveData<WeatherData>()
     val homeData: LiveData<WeatherData>
         get() = _homeData
@@ -34,7 +34,8 @@ class HomeViewModel : ViewModel() {
     }
 
     fun renewWeatherData(searchable: String) {
-        fetchWeatherDataJob.cancel()
+
+        searchableText = searchable
         fetchCurrentData(searchable)
     }
 
@@ -44,7 +45,7 @@ class HomeViewModel : ViewModel() {
                 var data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
                 _homeData.value = data.body()?.asWeatherDataDomainModel()
                 _comingDays.value = data.body()?.asDayDomainModel()
-                Log.i("checkAPI", "${data?.body()?.current?.humidity}")
+                Log.i("checkAPI", "${data.body()?.location?.localtime}")
             } catch (t: Throwable) {
                 Log.i("checkAPI", "failed")
             }
