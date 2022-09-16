@@ -33,10 +33,11 @@ class HomeViewModel : ViewModel() {
         fetchCurrentData(searchableText)
     }
 
-    fun renewWeatherData(searchable: String) {
-
-        searchableText = searchable
-        fetchCurrentData(searchable)
+    fun renewWeatherData(searchable: String?) {
+        searchable?.let {
+            searchableText = searchable
+            fetchCurrentData(searchable)
+        }
     }
 
     private fun fetchCurrentData(searchable: String) {

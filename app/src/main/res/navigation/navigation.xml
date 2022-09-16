@@ -16,7 +16,7 @@
             app:enterAnim="@anim/slide_in_bottom"
             app:exitAnim="@anim/slide_out_bottom" />
         <argument
-            android:name="Searchable"
+            android:name="searchable"
             app:argType="string"
             app:nullable="true" />
     </fragment>

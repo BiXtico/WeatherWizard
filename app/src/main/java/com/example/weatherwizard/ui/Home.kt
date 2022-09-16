@@ -35,7 +35,8 @@ class Home : Fragment() {
             Toast.makeText(context,"hello", Toast.LENGTH_SHORT).show()
         }
 
-//        var args = arguments?.let { HomeArgs.fromBundle(it) }
+       var args = arguments?.let { HomeArgs.fromBundle(it) }
+        viewModel.renewWeatherData(args?.searchable)
 
         //use the argument in the view model to get result from API
 

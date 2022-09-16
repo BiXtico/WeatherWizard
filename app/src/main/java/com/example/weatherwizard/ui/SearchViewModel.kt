@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 
 class SearchViewModel : ViewModel() {
 
-    val _nextDaysData = MutableLiveData<List<City>>()
+    private val _nextDaysData = MutableLiveData<List<City>>()
     val nextDaysData: LiveData<List<City>>
         get() = _nextDaysData
 
@@ -24,7 +24,6 @@ class SearchViewModel : ViewModel() {
      * cancels the previous search and starts a new one with new passed searchable text
      */
     fun renewSearch(searchable: String) {
-        fetchCitiesJob.cancel()
         fetchSearchables(searchable)
     }
     init {
