@@ -2,6 +2,7 @@ package com.example.weatherwizard.ui
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.provider.ContactsContract
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.weatherwizard.R
 import com.example.weatherwizard.databinding.HomeFragmentBinding
+import com.example.weatherwizard.databinding.WeatherCardBinding
 
 class Home : Fragment() {
     private lateinit var viewModel: HomeViewModel
@@ -22,9 +24,9 @@ class Home : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
-        binding = DataBindingUtil.inflate(inflater,R.layout.home_fragment,container,false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.home_fragment, container, false)
 
-        binding.searchIcon.setOnClickListener{
+        binding.searchIcon.setOnClickListener {
             it.findNavController().navigate(HomeDirections.actionHome2ToSearch())
         }
         binding.viewModel = viewModel
@@ -32,14 +34,13 @@ class Home : Fragment() {
 
         binding.reloadButton.setOnClickListener {
             viewModel.renewWeatherData(viewModel.searchableText)
-            Toast.makeText(context,"hello", Toast.LENGTH_SHORT).show()
+            Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show()
         }
 
-       var args = arguments?.let { HomeArgs.fromBundle(it) }
-        viewModel.renewWeatherData(args?.searchable)
+        var args = arguments?.get("searchable")
 
-        //use the argument in the view model to get result from API
-
+        if (args != null && args is String)
+            viewModel.renewWeatherData(args)
 
 
         return binding.root

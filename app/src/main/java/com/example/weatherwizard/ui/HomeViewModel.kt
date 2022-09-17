@@ -1,16 +1,12 @@
 package com.example.weatherwizard.ui
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.weatherwizard.network.*
 import kotlinx.coroutines.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.await
+
 
 class HomeViewModel : ViewModel() {
 
@@ -22,10 +18,8 @@ class HomeViewModel : ViewModel() {
     val comingDays: LiveData<List<NextDay>>
         get() = _comingDays
 
-
     private val fetchWeatherDataJob = Job()
     private val fetchWeatherDataScope = CoroutineScope(fetchWeatherDataJob + Dispatchers.Main)
-
 
     var searchableText = "London"
 
@@ -43,7 +37,7 @@ class HomeViewModel : ViewModel() {
     private fun fetchCurrentData(searchable: String) {
         fetchWeatherDataScope.launch {
             try {
-                var data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
+                val data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
                 _homeData.value = data.body()?.asWeatherDataDomainModel()
                 _comingDays.value = data.body()?.asDayDomainModel()
                 Log.i("checkAPI", "${data.body()?.location?.localtime}")

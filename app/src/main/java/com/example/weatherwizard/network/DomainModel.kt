@@ -21,7 +21,7 @@ data class NextDay(
     val icon: String,
     val temperatureHighest: String,
     val temperatureLowest: String,
-    val dayName: String,
+    val dayName: String
 )
 
 fun CityData.asWeatherDataDomainModel() = WeatherData(
@@ -36,7 +36,8 @@ fun CityData.asWeatherDataDomainModel() = WeatherData(
     condition = "It's " + current.condition.text,
     lastUpdated = location.localtime
 )
-fun CityData.asDayDomainModel() :List<NextDay>{
+
+fun CityData.asDayDomainModel(): List<NextDay> {
     return forecast.forecastday.map {
         NextDay(
             temperatureHighest = it.day.maxtempF.toString(),
@@ -47,14 +48,15 @@ fun CityData.asDayDomainModel() :List<NextDay>{
     }
 }
 
-fun String.asDayFormat() : String{
+fun String.asDayFormat(): String {
     val inFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
     val date: Date = inFormat.parse(this)
     val outFormat: SimpleDateFormat = SimpleDateFormat("EEEE")
     val dateInLetters: String = outFormat.format(date)
     return dateInLetters
 }
-fun String.asDateFormat() : String{
+
+fun String.asDateFormat(): String {
     val inFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
     val date: Date = inFormat.parse(this)
     val outFormat: SimpleDateFormat = SimpleDateFormat("EEEE, dd MMM YYYY")
