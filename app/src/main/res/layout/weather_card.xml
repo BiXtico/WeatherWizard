@@ -4,7 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="dayName"
+            type="String" />
+        <variable
+            name="highestTemp"
+            type="String" />
+        <variable
+            name="lowestTemp"
+            type="String" />
+        <variable
+            name="humidity"
+            type="String" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -21,6 +32,7 @@
             android:layout_margin="@dimen/small_12"
             android:textAlignment="center"
             android:textSize="@dimen/small_text_12"
+            android:text="@{dayName}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -71,6 +83,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/small_text_12"
+            android:text="@{highestTemp+lowestTemp}"
             app:layout_constraintBottom_toBottomOf="@+id/high_low"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/high_low"
@@ -82,6 +95,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="@dimen/small_text_12"
+            android:text="@{humidity}"
             app:layout_constraintBottom_toBottomOf="@+id/imageView2"
             app:layout_constraintEnd_toEndOf="@+id/weather_high_low"
             app:layout_constraintStart_toStartOf="@+id/weather_high_low"

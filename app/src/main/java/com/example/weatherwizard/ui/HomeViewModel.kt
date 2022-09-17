@@ -40,7 +40,7 @@ class HomeViewModel : ViewModel() {
                 val data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
                 _homeData.value = data.body()?.asWeatherDataDomainModel()
                 _comingDays.value = data.body()?.asDayDomainModel()
-                Log.i("checkAPI", "${data.body()?.location?.localtime}")
+                Log.i("checkAPI", "${data.body()?.forecast?.forecastday?.get(0)?.day?.avghumidity}")
             } catch (t: Throwable) {
                 Log.i("checkAPI", "failed")
             }

@@ -39,6 +39,7 @@ data class Day(
     val maxtempF: Double,
     @Json(name = "mintemp_f")
     val mintempF: Double,
+    val avghumidity: Long,
     val condition: Condition,
 )
 

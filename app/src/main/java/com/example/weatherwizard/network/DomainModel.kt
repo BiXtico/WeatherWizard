@@ -21,7 +21,8 @@ data class NextDay(
     val icon: String,
     val temperatureHighest: String,
     val temperatureLowest: String,
-    val dayName: String
+    val dayName: String,
+    val avgHumidity:String
 )
 
 fun CityData.asWeatherDataDomainModel() = WeatherData(
@@ -43,7 +44,8 @@ fun CityData.asDayDomainModel(): List<NextDay> {
             temperatureHighest = it.day.maxtempF.toString(),
             temperatureLowest = it.day.mintempF.toString(),
             dayName = it.date.asDayFormat(),
-            icon = it.day.condition.icon
+            icon = it.day.condition.icon,
+            avgHumidity = it.day.avghumidity.toString()
         )
     }
 }
