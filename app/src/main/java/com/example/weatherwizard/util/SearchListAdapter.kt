@@ -16,12 +16,10 @@ class RecycleViewAdapter(val clickListener: CityListener): ListAdapter<City, Rec
         holder.bind(getItem(position)!!,clickListener)
     }
 
-    //create the view holder supplier
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CityViewHolder {
         return CityViewHolder.from(parent)
     }
 
-    //create the view holder
     class CityViewHolder private constructor (val binding: SearchCardBinding) :RecyclerView.ViewHolder(binding.root){
         val cityName: TextView = binding.cityResult
 

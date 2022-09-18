@@ -17,7 +17,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/recycler_card"
-        android:layout_margin="@dimen/small_12"
+        android:layout_marginEnd="@dimen/small_12"
+        android:layout_marginStart="@dimen/small_12"
+        android:layout_marginTop="@dimen/small_12"
         android:onClick="@{() -> clickListener.onClick(city)}">
 
         <TextView

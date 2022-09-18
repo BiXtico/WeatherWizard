@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.example.weatherwizard.ui.HomeViewModel" />
@@ -76,7 +75,10 @@
             android:id="@+id/weather_icon"
             android:layout_width="64dp"
             android:layout_height="54dp"
+            android:maxHeight="54dp"
+            android:maxWidth="64dp"
             android:layout_marginEnd="@dimen/medium_16"
+            app:imageUrl="@{viewModel.homeData.icon}"
             app:layout_constraintBottom_toBottomOf="@+id/weather_degree"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -183,6 +185,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
             app:name="@{viewModel.comingDays.get(0).dayName}"
+            app:iconURL="@{viewModel.comingDays.get(0).icon}"
             app:highestTemp="@{viewModel.comingDays.get(0).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(0).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(0).avgHumidity}"
@@ -197,6 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
             app:name="@{viewModel.comingDays.get(1).dayName}"
+            app:iconURL="@{viewModel.comingDays.get(1).icon}"
             app:highestTemp="@{viewModel.comingDays.get(1).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(1).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(1).avgHumidity}"
@@ -211,6 +215,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
             app:name="@{viewModel.comingDays.get(2).dayName}"
+            app:iconURL="@{viewModel.comingDays.get(2).icon}"
             app:highestTemp="@{viewModel.comingDays.get(2).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(2).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(2).avgHumidity}"

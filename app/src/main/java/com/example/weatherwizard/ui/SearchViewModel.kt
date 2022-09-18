@@ -10,9 +10,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
+import java.util.*
 
 class SearchViewModel : ViewModel() {
 
+    val currentTime: Date = Calendar.getInstance().time
     private val _nextDaysData = MutableLiveData<List<City>>()
     val nextDaysData: LiveData<List<City>>
         get() = _nextDaysData
@@ -25,9 +27,6 @@ class SearchViewModel : ViewModel() {
      */
     fun renewSearch(searchable: String) {
         fetchSearchables(searchable)
-    }
-    init {
-        fetchSearchables("London")
     }
 
     /**

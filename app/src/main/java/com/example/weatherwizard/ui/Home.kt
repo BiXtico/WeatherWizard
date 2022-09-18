@@ -34,13 +34,14 @@ class Home : Fragment() {
 
         binding.reloadButton.setOnClickListener {
             viewModel.renewWeatherData(viewModel.searchableText)
-            Toast.makeText(context, "hello", Toast.LENGTH_SHORT).show()
         }
 
         var args = arguments?.get("searchable")
 
         if (args != null && args is String)
             viewModel.renewWeatherData(args)
+        else if (args == null && args is String)
+            viewModel.renewWeatherData(viewModel.searchableText)
 
 
         return binding.root

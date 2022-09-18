@@ -27,9 +27,7 @@
         tools:layout="@layout/search_fragment">
         <action
             android:id="@+id/action_search_to_home2"
-            app:destination="@id/home2"
-            app:enterAnim="@anim/slide_out_bottom"
-            app:exitAnim="@anim/slide_in_bottom" />
+            app:destination="@id/home2" />
 
     </fragment>
 </navigation>
