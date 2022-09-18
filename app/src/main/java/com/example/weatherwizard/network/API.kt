@@ -13,7 +13,7 @@ import retrofit2.http.Query
 
 
 private const val URL = "https://api.weatherapi.com/v1/"
-private const val key = "bec1ed22e8bb44af874172300221709"
+private const val key = "42f2af07bfae4fe4a98232721221709"
 private const val days = 3
 private const val aqiResponse = "no"
 private const val alertStatus = "no"

@@ -38,9 +38,9 @@ class HomeViewModel : ViewModel() {
         fetchWeatherDataScope.launch {
             try {
                 val data = WeatherAPI.retrofitService.getWeatherInfo(searchable)
-                _homeData.value = data.body()?.asWeatherDataDomainModel()
                 _comingDays.value = data.body()?.asDayDomainModel()
-                Log.i("checkAPI", "${data.body()?.forecast?.forecastday?.get(0)?.day?.avghumidity}")
+                _homeData.value = data.body()?.asWeatherDataDomainModel()
+                Log.i("checkAPI", "${data.body()?.forecast?.forecastday?.size}")
             } catch (t: Throwable) {
                 Log.i("checkAPI", "failed")
             }

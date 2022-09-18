@@ -34,7 +34,7 @@ fun CityData.asWeatherDataDomainModel() = WeatherData(
     temperature = current.tempF.toString(),
     windSpeed = current.windMph.toString(),
     humidityPercentage = current.humidity.toString(),
-    condition = "It's " + current.condition.text,
+    condition = current.condition.text,
     lastUpdated = location.localtime
 )
 
@@ -51,17 +51,15 @@ fun CityData.asDayDomainModel(): List<NextDay> {
 }
 
 fun String.asDayFormat(): String {
-    val inFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+    val inFormat = SimpleDateFormat("yyyy-MM-dd")
     val date: Date = inFormat.parse(this)
-    val outFormat: SimpleDateFormat = SimpleDateFormat("EEEE")
-    val dateInLetters: String = outFormat.format(date)
-    return dateInLetters
+    val outFormat = SimpleDateFormat("EEEE")
+    return date?.let { outFormat.format(it) }
 }
 
 fun String.asDateFormat(): String {
-    val inFormat: SimpleDateFormat = SimpleDateFormat("yyyy-MM-dd")
+    val inFormat = SimpleDateFormat("yyyy-MM-dd")
     val date: Date = inFormat.parse(this)
-    val outFormat: SimpleDateFormat = SimpleDateFormat("EEEE, dd MMM YYYY")
-    val dateInLetters: String = outFormat.format(date)
-    return dateInLetters
+    val outFormat= SimpleDateFormat("EEEE, dd MMM YYYY")
+    return date?.let { outFormat.format(it) }
 }

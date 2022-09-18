@@ -22,10 +22,10 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="@dimen/large_40"
+            android:text="@{viewModel.homeData.time}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:text="@{viewModel.homeData.time}"
             tools:text="@string/time" />
 
         <ImageButton
@@ -49,23 +49,23 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="48dp"
+            android:text="@{viewModel.homeData.cityName}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/time"
-            android:text="@{viewModel.homeData.cityName}"
             tools:text="@string/city" />
 
 
         <TextView
             android:id="@+id/weather_degree"
             style="@style/Extra_Light_Text"
-            android:layout_width="150dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/medium_16"
             android:layout_marginTop="@dimen/large_32"
             android:textAlignment="center"
             android:textSize="60sp"
-            android:text="@{viewModel.homeData.temperature}"
+            android:text="@{@string/weather_f(viewModel.homeData.temperature)}"
             app:layout_constraintEnd_toStartOf="@+id/weather_icon"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
@@ -89,10 +89,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
+            android:text="@{@string/weather_state(viewModel.homeData.condition)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/weather_degree"
-            android:text="@{viewModel.homeData.condition}"
             tools:text="@string/weather_state" />
 
         <LinearLayout
@@ -121,10 +121,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/medium_24"
+                android:text="@{@string/humidity_p(viewModel.homeData.humidityPercentage)}"
+                android:layout_margin="@dimen/small_12"
                 android:textSize="@dimen/small_text_12"
-                android:text="@{viewModel.homeData.humidityPercentage}"
-                tools:text="@string/humidity" />
+                tools:text="@string/humidity_p" />
 
             <View
                 style="@style/Divider"
@@ -134,7 +134,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/medium_24"
+                android:layout_margin="@dimen/small_12"
                 android:src="@drawable/wind_icon" />
 
             <TextView
@@ -142,9 +142,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_margin="@dimen/medium_24"
+                android:text="@{@string/wind_speed(viewModel.homeData.windSpeed)}"
+                android:layout_margin="@dimen/small_12"
                 android:textSize="@dimen/small_text_12"
-                android:text="@{viewModel.homeData.windSpeed}"
                 tools:text="@string/wind_speed" />
 
             <View
@@ -171,8 +171,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="@dimen/small_12"
-            android:text="@{viewModel.homeData.lastUpdated}"
             android:textSize="@dimen/small_text_12"
+            android:text="@{@string/last_updated(viewModel.homeData.lastUpdated)}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/current_box" />
 
@@ -182,7 +182,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
-            app:dayName="@{viewModel.comingDays.get(0).dayName}"
+            app:name="@{viewModel.comingDays.get(0).dayName}"
             app:highestTemp="@{viewModel.comingDays.get(0).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(0).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(0).avgHumidity}"
@@ -196,7 +196,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
-            app:dayName="@{viewModel.comingDays.get(1).dayName}"
+            app:name="@{viewModel.comingDays.get(1).dayName}"
             app:highestTemp="@{viewModel.comingDays.get(1).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(1).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(1).avgHumidity}"
@@ -210,7 +210,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/small_12"
-            app:dayName="@{viewModel.comingDays.get(2).dayName}"
+            app:name="@{viewModel.comingDays.get(2).dayName}"
             app:highestTemp="@{viewModel.comingDays.get(2).temperatureHighest}"
             app:lowestTemp="@{viewModel.comingDays.get(2).temperatureLowest}"
             app:humidity="@{viewModel.comingDays.get(2).avgHumidity}"

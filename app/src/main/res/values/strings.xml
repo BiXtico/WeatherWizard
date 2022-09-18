@@ -2,16 +2,16 @@
     <string name="app_name">WeatherWizard</string>
     <string name="time">08:00 AM</string>
     <string name="city">London</string>
-    <string name="weather_state">Sunny</string>
-    <string name="humidity">60%</string>
-    <string name="wind_speed">3 mph</string>
-    <string name="last_updated">last updated: Sun, Jul 14, 11:34 AM</string>
+    <string name="weather_state">It\'s %1$s</string>
+    <string name="humidity_p" >%1$s %%</string>
+    <string name="wind_speed">%1$s mph</string>
+    <string name="last_updated">last updated: %1$s</string>
     <string name="day">Today</string>
     <string name="day_after">Friday</string>
     <string name="day_after_after">Saturday</string>
     <string name="high_low_weather">H / L</string>
-    <string name="high_low">62.6° / 71.6°F</string>
+    <string name="high_low">%1$s° / %2$s°F</string>
     <string name="search_hint">Search</string>
     <string name="search_item">London - United Kingdom</string>
-    <string name="weather_f">18℉</string>
+    <string name="weather_f">%1$s℉</string>
 </resources>

@@ -5,7 +5,7 @@
 
     <data>
         <variable
-            name="dayName"
+            name="name"
             type="String" />
         <variable
             name="highestTemp"
@@ -32,7 +32,7 @@
             android:layout_margin="@dimen/small_12"
             android:textAlignment="center"
             android:textSize="@dimen/small_text_12"
-            android:text="@{dayName}"
+            android:text="@{name}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
